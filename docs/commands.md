@@ -1,0 +1,3 @@
+/start - restart or start bot 
+/help - show message in which you can find all
+commands of bot and their short description
