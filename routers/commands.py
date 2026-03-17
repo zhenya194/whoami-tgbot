@@ -13,10 +13,16 @@ async def cmd_start(message: types.Message):
 
 @router.message(Command("myname"))
 async def cmd_start(message: types.Message):
-    await message.answer(f"Your name:\n\n"
-                         f"Full name: <code>{message.from_user.full_name}</code>\n"
-                         f"First name: <code>{message.from_user.first_name}</code>\n"
-                         f"Last name: <code>{message.from_user.last_name}</code>\n", parse_mode="HTML")
+    if message.from_user.last_name == None:
+        await message.answer(f"Your name:\n\n"
+                            f"Full name: <code>{message.from_user.full_name}</code>\n"
+                            f"First name: <code>{message.from_user.first_name}</code>\n"
+                            f"Last name: you haven't set last name\n", parse_mode="HTML")
+    else:
+        await message.answer(f"Your name:\n\n"
+                            f"Full name: <code>{message.from_user.full_name}</code>\n"
+                            f"First name: <code>{message.from_user.first_name}</code>\n"
+                            f"Last name: <code>{message.from_user.last_name}</code>\n", parse_mode="HTML")
 
 @router.message(Command("help"))
 async def cmd_help(message: types.Message):
