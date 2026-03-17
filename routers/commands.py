@@ -7,9 +7,14 @@ router = Router()
 async def cmd_start(message: types.Message):
     await message.answer(f"Hello, {message.from_user.first_name}! Use /help command to get message with help.")
 
+@router.message(Command("myid"))
+async def cmd_start(message: types.Message):
+    await message.answer(f"Your id: <code>{message.from_user.id}</code>", parse_mode="HTML")
+
 @router.message(Command("help"))
 async def cmd_help(message: types.Message):
     return await message.answer(f"Commands for <b>What is my id bot</b>:\n\n"
         f"/start - restart bot\n"
-        f"/help - show this message\n",
+        f"/help - show this message\n"
+        f"/myid - show your id",
         parse_mode="HTML")
