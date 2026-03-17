@@ -15,5 +15,6 @@ async def cmd_start(message: types.Message):
 async def cmd_help(message: types.Message):
     return await message.answer(f"Commands for <b>What is my id bot</b>:\n\n"
         f"/start - restart bot\n"
-        f"/help - show this message\n",
+        f"/help - show this message\n"
+        f"/myid - show your id",
         parse_mode="HTML")
