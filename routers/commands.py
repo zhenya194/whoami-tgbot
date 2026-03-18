@@ -8,11 +8,11 @@ async def cmd_start(message: types.Message):
     await message.answer(f"Hello, {message.from_user.first_name}! Use /help command to get message with help.")
 
 @router.message(Command("myid"))
-async def cmd_start(message: types.Message):
+async def cmd_myid(message: types.Message):
     await message.answer(f"Your id: <code>{message.from_user.id}</code>", parse_mode="HTML")
 
 @router.message(Command("myname"))
-async def cmd_start(message: types.Message):
+async def cmd_myname(message: types.Message):
     if message.from_user.last_name == None:
         await message.answer(f"Your name:\n\n"
                             f"Full name: <code>{message.from_user.full_name}</code>\n"
