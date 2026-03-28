@@ -15,7 +15,7 @@ async def cmd_myid(message: types.Message):
 async def cmd_myname(message: types.Message):
     if message.from_user.last_name == None:
         await message.answer(f"Your name:\n\n"
-                            f"Full name: <code>{message.from_user.full_name}</code>\n"
+                            f"Full name: <code>{message.from_user.first_name}</code>\n"
                             f"First name: <code>{message.from_user.first_name}</code>\n"
                             f"Last name: you haven't set last name\n", parse_mode="HTML")
     else:
