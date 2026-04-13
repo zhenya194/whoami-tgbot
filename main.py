@@ -7,7 +7,7 @@ from routers import commands
 import os
 import time
 
-time.sleep(85)
+time.sleep(15)
 
 # --- ping endpoint ---
 async def ping(request):
